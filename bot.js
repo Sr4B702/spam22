@@ -56,37 +56,6 @@ if (message.content === prefix+'spam') {
       }
 });
 
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-
-
-client.on("message",async msg => {
-    if(msg.content.startsWith(prefix + "say")){
-        let args = '';
-        let fltr = m => m.author.id === msg.author.id
-        await msg.reply("**اكتب شي لجعلي اكتب شيئ الان**").then(p =>{
-            p.delete(2222)
-        })
-        msg.channel.awaitMessages(fltr, {
-time: 60000,
-max: 1
-        })
-        .then(sy => {
-            args = sy.first().content
-            sy.first().delete();
-            msg.delete(2222);
-            msg.channel.send(args)
-        })
-    }
-})
-
 client2.on('message', message => {
     if(message.content === prefix+'راتب'){
         message.channel.send('#daily')
