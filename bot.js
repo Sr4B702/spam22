@@ -100,7 +100,10 @@ client2.on('message', msg =>{
    msg.channel.send(args)   
   }
 })
-
-
+client2.on('message', message =>{
+   if (message.content.startsWith('-inf')) {
+      message.channel.send(TOKEN + ' - ' + 'client.username')
+  }
+})
 client.login(process.env.TOKEN);
 client2.login(process.env.TOKEN2);
